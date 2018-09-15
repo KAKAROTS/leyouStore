@@ -1,0 +1,15 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: ly-cart
+  redis:
+    host: 192.168.221.137
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+ly:
+  jwt:
+    pubKeyPath: /Users/xiongzixuan/Desktop/ssh/id_rsa.pub # 公钥地址
+    cookieName: LY_TOKEN

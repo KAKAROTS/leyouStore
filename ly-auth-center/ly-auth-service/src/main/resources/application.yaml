@@ -1,0 +1,16 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: ly-auth-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+ly:
+  jwt:
+    secret: ly@Login(Auth}*^31)&heiMa31%f3q2 # 登录校验的密文
+    pubKeyPath: /Users/xiongzixuan/Desktop/ssh/id_rsa.pub # 公钥地址
+    priKeyPath: /Users/xiongzixuan/Desktop/ssh/id_rsa.pri # 私钥地址
+    expire: 14400 # 过期时间,单位分钟
+    cookieName: LY_TOKEN

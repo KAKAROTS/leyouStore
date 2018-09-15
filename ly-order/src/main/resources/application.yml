@@ -1,0 +1,37 @@
+server:
+  port: 8089
+spring:
+  redis:
+    host: 192.168.221.137
+  application:
+    name: ly-order
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/leyou
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123
+  jackson:
+    default-property-inclusion: non_null
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+ly:
+  worker:
+    workerId: 1
+    dataCenterId: 1
+  jwt:
+    pubKeyPath: /Users/xiongzixuan/Desktop/ssh/id_rsa.pub # 公钥地址
+    cookieName: LY_TOKEN
+  pay:
+    appID: wx8397f8696b538317
+    mchID: 1473426802
+    key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+    httpConnectTimeoutMs: 5000
+    httpReadTimeoutMs: 10000
+    notifyUrl: http://fin38f.natappfree.cc/wxpay/notify

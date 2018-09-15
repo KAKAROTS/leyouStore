@@ -1,0 +1,46 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: ly-item-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/leyou
+    username: root
+    password: 123
+#  rabbitmq:
+#    host: 192.168.221.137
+#    username: leyou
+#    password: leyou
+#    virtual-host: /leyou
+#    template:
+#      exchange: ly.item.exchang #默认的交换机，发送消息时如果不指定交换机名称就会使用这个、
+#      retry:
+#        enabled: true #开启重试
+#        initial-interval: 10000ms #第一次重试时间间隔
+#        max-interval: 30000ms #最大的重试时间
+#        multiplier: 2 #下次重试时间间隔时上次重试时间的倍数
+#    publisher-confirms: true #开启生产者确认模式，确认消息发送成功后就不再发送消息，失败就重试
+
+  rabbitmq:
+    host: 192.168.221.137
+    username: leyou
+    password: leyou
+    virtual-host: /leyou
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 30000ms
+        multiplier: 2
+      exchange: ly.item.exchange
+    publisher-confirms: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
